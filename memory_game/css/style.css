@@ -11,7 +11,6 @@ header {
 
 nav {
 	background-color: #00A6B3;
-	color: #FFFFFF;
 	padding: 20px 0;
 }
 
@@ -22,7 +21,6 @@ main {
 
 h1, h2 {
 	font-family: Raleway, sans-serif;
-	color: #0D2C40;
 	letter-spacing: 1px;
 	text-transform: uppercase;
 }
@@ -46,7 +44,7 @@ p {
 
 a {
 	font-family: Raleway, sans-serif;
-	color: #F15B31;
+	color: #FFFFFF;
 	letter-spacing: 1px;
 	font-weight: 600;
 	font-size: 18px;
@@ -57,6 +55,10 @@ a {
 
 img {
 	margin: 40px 8px;
+}
+
+#email {
+	color: #F15B31;
 }
 
 
