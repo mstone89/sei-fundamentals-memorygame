@@ -2,6 +2,12 @@ body {
 	text-align: center;
 }
 
+header {
+	background-color: #F15B31;
+	color: #FFFFFF;
+	padding: 30px 20px;
+}
+
 h1, h2 {
 	font-family: Raleway, sans-serif;
 	color: #0D2C40;
