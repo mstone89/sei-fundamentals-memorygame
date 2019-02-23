@@ -51,6 +51,11 @@ a {
 	text-transform: uppercase;
 	text-decoration: none;
 	margin: 0 20px;
+	border-bottom: 2px solid transparent;
+}
+
+a:hover {
+	border-color: #FFFFFF;
 }
 
 img {
@@ -60,5 +65,90 @@ img {
 #email {
 	color: #F15B31;
 }
+
+footer {
+	text-transform: uppercase;
+	padding: 0 20px;
+	background: #0D2C40;
+	color: #FFFFFF;
+	font-size: 14px;
+	letter-spacing: .08em;
+	font-weight: 500;
+}
+
+footer p {
+	font-family: Raleway, sans-serif;
+}
+
+.copyright {
+	float: left;
+}
+
+.message {
+	float: right;
+}
+
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	content: " ";
+	clear: both;
+	height: 0;
+	font-size: 0;
+}
+
+.name {
+	color: #F15B31;
+	font-weight: 700;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
