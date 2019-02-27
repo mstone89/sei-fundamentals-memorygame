@@ -21,6 +21,20 @@ var cards = [
 	}
 ];
 
+var randomizeCards = function(array) {
+	for (var i = array.length - 1; i > 0; i--) {
+		var j = Math.floor(Math.random() * (i + 1));
+		var temp = array[i];
+		array[i] = array[j];
+		array[j] = temp;
+		return array;
+	}
+}
+// the cards array does become randomized, but then both rows of cards are the same.
+// now we need both rows to be randomized.
+
+randomizeCards(cards);
+
 var createBoard = function() {
 	for (var j = 0; j < 2; j++) {
 		for (var i = 0; i < cards.length; i++) {
