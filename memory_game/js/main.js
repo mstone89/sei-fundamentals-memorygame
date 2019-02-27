@@ -42,6 +42,7 @@ var flipCard = function() {
 
 	if (cardsInPlay.length === 2) {
 		checkForMatch();
+		cardsInPlay = [];
 	}
 }
 
@@ -63,8 +64,16 @@ var buttonMouseOut = function() {
 	button.style.backgroundColor = '#F15B31';
 }
 
+var resetBoard = function() {
+	cardsInPlay = [];
+	var currentCards = document.querySelectorAll('img');
+	for (var i = 0; i < currentCards.length; i++) {
+		currentCards[i].setAttribute('src', 'images/back.png');
+	}
+}
 
 button.addEventListener('mouseover', buttonMouseOver);
 button.addEventListener('mouseout', buttonMouseOut);
+button.addEventListener('click', resetBoard);
 
 createBoard();
