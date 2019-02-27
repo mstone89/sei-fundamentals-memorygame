@@ -53,4 +53,18 @@ var checkForMatch = function() {
 	}
 }
 
+var button = document.querySelector('button');
+
+var buttonMouseOver = function() {
+    button.style.backgroundColor = '#00A6B3';
+}
+
+var buttonMouseOut = function() {
+	button.style.backgroundColor = '#F15B31';
+}
+
+
+button.addEventListener('mouseover', buttonMouseOver);
+button.addEventListener('mouseout', buttonMouseOut);
+
 createBoard();
