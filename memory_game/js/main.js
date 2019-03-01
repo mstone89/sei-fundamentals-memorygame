@@ -57,7 +57,7 @@ var flipCard = function() {
 	if (this.getAttribute("src") === 'images/back.png') {
 		var cardId = this.getAttribute('data-id');
 		console.log('User flipped ' + cards[cardId].rank + '-' + cards[cardId].suit);
-		cardsInPlay.push(cards[cardId].rank + '-' + cards[cardId].suit);
+		cardsInPlay.push(cards[cardId]);
 		this.setAttribute('src', cards[cardId].cardImage);
 		if (cardsInPlay.length === 2) {
 			checkForMatch();
