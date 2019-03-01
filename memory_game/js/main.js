@@ -21,6 +21,9 @@ var cards = [
 	}
 ];
 
+/*
+need to try and work this in later.
+
 var randomizeCards = function(array) {
 	for (var i = array.length - 1; i > 0; i--) {
 		var j = Math.floor(Math.random() * (i + 1));
@@ -30,10 +33,7 @@ var randomizeCards = function(array) {
 		return array;
 	}
 }
-// the cards array does become randomized, but then both rows of cards are the same.
-// now we need both rows to be randomized.
-
-randomizeCards(cards);
+*/
 
 var createBoard = function() {
 	for (var j = 0; j < 2; j++) {
@@ -66,13 +66,16 @@ var flipCard = function() {
 	}
 }
 
+var matchMessage = document.createElement('p');
+document.getElementById('match-message').appendChild(matchMessage);
+
 var checkForMatch = function() {
 	if (cardsInPlay[0] === cardsInPlay[1]) {
-		alert('You found a match!');
 		playerScore += 1;
 		displayScore.textContent = 'Player Score: ' + playerScore;
+		matchMessage.textContent = 'You found a match!';
 	} else {
-		alert('Sorry, try again.');
+		matchMessage.textContent = 'Sorry, try again.';
 	}
 }
 
