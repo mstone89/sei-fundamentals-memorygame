@@ -93,6 +93,7 @@ var resetBoard = function() {
 	cardsInPlay = [];
 	playerScore = 0;
 	displayScore.textContent = 'Player Score: ' + playerScore;
+	matchMessage.textContent = null;
 	var currentCards = document.querySelectorAll('img');
 	for (var i = 0; i < currentCards.length; i++) {
 		currentCards[i].setAttribute('src', 'images/back.png');
