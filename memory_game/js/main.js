@@ -35,6 +35,15 @@ var randomizeCards = function(array) {
 }
 */
 
+var cardsInPlay = [];
+var playerScore = 0;
+
+var displayScore = document.getElementById('player-score');
+displayScore.textContent = 'Player Score: ' + playerScore;
+
+var matchMessage = document.createElement('p');
+document.getElementById('match-message').appendChild(matchMessage);
+
 var createBoard = function() {
 	for (var i = 0; i < cards.length; i++) {
 		var cardElement = document.createElement('img');
@@ -45,13 +54,8 @@ var createBoard = function() {
 	}
 }
 
-var cardsInPlay = [];
-var playerScore = 0;
-
-var displayScore = document.getElementById('player-score');
-displayScore.textContent = 'Player Score: ' + playerScore;
-
 var flipCard = function() {
+	matchMessage.textContent = null;
 	if (this.getAttribute("src") === 'images/back.png') {
 		var cardId = this.getAttribute('data-id');
 		console.log('User flipped ' + cards[cardId].rank);
@@ -65,9 +69,6 @@ var flipCard = function() {
 		return;
 	}
 }
-
-var matchMessage = document.createElement('p');
-document.getElementById('match-message').appendChild(matchMessage);
 
 var checkForMatch = function() {
 	if (cardsInPlay[0] === cardsInPlay[1]) {
