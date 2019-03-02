@@ -31,8 +31,6 @@ var randomizeCards = function(array) {
 	}
 }
 
-var randomCards = randomizeCards(cards);
-
 var cardsInPlay = [];
 var playerScore = 0;
 
@@ -43,6 +41,7 @@ var matchMessage = document.createElement('p');
 document.getElementById('match-message').appendChild(matchMessage);
 
 var createBoard = function() {
+	var randomCards = randomizeCards(cards);
 	for (var i = 0; i < randomCards.length; i++) {
 		var cardElement = document.createElement('img');
 		cardElement.setAttribute('src', 'images/back.png');
