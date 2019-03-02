@@ -53,8 +53,8 @@ var createBoard = function() {
 }
 
 var flipCard = function() {
-	matchMessage.textContent = null;
 	if (this.getAttribute("src") === 'images/back.png') {
+		matchMessage.textContent = null;
 		var cardId = this.getAttribute('data-id');
 		console.log('User flipped ' + randomCards[cardId].rank);
 		cardsInPlay.push(randomCards[cardId].rank);
