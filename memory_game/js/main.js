@@ -21,9 +21,6 @@ var cards = [
 	}
 ];
 
-/*
-need to try and work this in later.
-
 var randomizeCards = function(array) {
 	for (var i = array.length - 1; i > 0; i--) {
 		var j = Math.floor(Math.random() * (i + 1));
@@ -33,7 +30,8 @@ var randomizeCards = function(array) {
 		return array;
 	}
 }
-*/
+
+var randomCards = randomizeCards(cards);
 
 var cardsInPlay = [];
 var playerScore = 0;
@@ -45,7 +43,7 @@ var matchMessage = document.createElement('p');
 document.getElementById('match-message').appendChild(matchMessage);
 
 var createBoard = function() {
-	for (var i = 0; i < cards.length; i++) {
+	for (var i = 0; i < randomCards.length; i++) {
 		var cardElement = document.createElement('img');
 		cardElement.setAttribute('src', 'images/back.png');
 		cardElement.setAttribute('data-id', i);
@@ -58,9 +56,9 @@ var flipCard = function() {
 	matchMessage.textContent = null;
 	if (this.getAttribute("src") === 'images/back.png') {
 		var cardId = this.getAttribute('data-id');
-		console.log('User flipped ' + cards[cardId].rank);
-		cardsInPlay.push(cards[cardId].rank);
-		this.setAttribute('src', cards[cardId].cardImage);
+		console.log('User flipped ' + randomCards[cardId].rank);
+		cardsInPlay.push(randomCards[cardId].rank);
+		this.setAttribute('src', randomCards[cardId].cardImage);
 		if (cardsInPlay.length === 2) {
 			checkForMatch();
 			cardsInPlay = [];
