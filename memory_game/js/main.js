@@ -53,11 +53,14 @@ var createBoard = function() {
 }
 
 var flipCard = function() {
+	var currentCard = {};
 	if (this.getAttribute("src") === 'images/back.png') {
 		matchMessage.textContent = null;
 		var cardId = this.getAttribute('data-id');
 		console.log('User flipped ' + randomCards[cardId].rank);
-		cardsInPlay.push(randomCards[cardId].rank);
+		currentCard.rank = randomCards[cardId].rank;
+		currentCard.cardId = cardId;
+		cardsInPlay.push(currentCard);
 		this.setAttribute('src', randomCards[cardId].cardImage);
 		if (cardsInPlay.length === 2) {
 			checkForMatch();
@@ -69,7 +72,7 @@ var flipCard = function() {
 }
 
 var checkForMatch = function() {
-	if (cardsInPlay[0] === cardsInPlay[1]) {
+	if (cardsInPlay[0].rank === cardsInPlay[1].rank) {
 		playerScore += 1;
 		displayScore.textContent = 'Player Score: ' + playerScore;
 		matchMessage.textContent = 'You found a match!';
