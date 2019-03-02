@@ -36,14 +36,12 @@ var randomizeCards = function(array) {
 */
 
 var createBoard = function() {
-	for (var j = 0; j < 2; j++) {
-		for (var i = 0; i < cards.length; i++) {
-			var cardElement = document.createElement('img');
-			cardElement.setAttribute('src', 'images/back.png');
-			cardElement.setAttribute('data-id', i);
-			cardElement.addEventListener('click', flipCard);
-			document.getElementById('game-board').appendChild(cardElement);
-		}
+	for (var i = 0; i < cards.length; i++) {
+		var cardElement = document.createElement('img');
+		cardElement.setAttribute('src', 'images/back.png');
+		cardElement.setAttribute('data-id', i);
+		cardElement.addEventListener('click', flipCard);
+		document.getElementById('game-board').appendChild(cardElement);
 	}
 }
 
@@ -56,8 +54,8 @@ displayScore.textContent = 'Player Score: ' + playerScore;
 var flipCard = function() {
 	if (this.getAttribute("src") === 'images/back.png') {
 		var cardId = this.getAttribute('data-id');
-		console.log('User flipped ' + cards[cardId].rank + '-' + cards[cardId].suit);
-		cardsInPlay.push(cards[cardId]);
+		console.log('User flipped ' + cards[cardId].rank);
+		cardsInPlay.push(cards[cardId].rank);
 		this.setAttribute('src', cards[cardId].cardImage);
 		if (cardsInPlay.length === 2) {
 			checkForMatch();
