@@ -54,6 +54,7 @@ var createBoard = function() {
 
 var flipCard = function() {
 	var currentCard = {};
+	var images = document.querySelectorAll('img');
 	if (this.getAttribute("src") === 'images/back.png') {
 		matchMessage.textContent = null;
 		var cardId = this.getAttribute('data-id');
@@ -63,8 +64,12 @@ var flipCard = function() {
 		cardsInPlay.push(currentCard);
 		this.setAttribute('src', randomCards[cardId].cardImage);
 		if (cardsInPlay.length === 2) {
-			checkForMatch();
-			cardsInPlay = [];
+			setTimeout(function() {
+				if (!checkForMatch()) {
+					flipCardNoMatch(images);
+				}
+				cardsInPlay = [];
+			}, 600);
 		}
 	} else {
 		return;
@@ -72,14 +77,14 @@ var flipCard = function() {
 };
 
 var checkForMatch = function() {
-	var images = document.querySelectorAll('img');
 	if (cardsInPlay[0].rank === cardsInPlay[1].rank) {
 		playerScore += 1;
 		displayScore.textContent = 'Player Score: ' + playerScore;
 		matchMessage.textContent = 'You found a match!';
+		return true;
 	} else {
 		matchMessage.textContent = 'Sorry, try again.';
-		flipCardNoMatch(images);
+		return false;
 	}
 };
 
