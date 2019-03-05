@@ -72,12 +72,20 @@ var flipCard = function() {
 }
 
 var checkForMatch = function() {
+	var images = document.querySelectorAll('img');
 	if (cardsInPlay[0].rank === cardsInPlay[1].rank) {
 		playerScore += 1;
 		displayScore.textContent = 'Player Score: ' + playerScore;
 		matchMessage.textContent = 'You found a match!';
 	} else {
 		matchMessage.textContent = 'Sorry, try again.';
+		for (var i = 0; i < images.length; i++) {
+			for (var j = 0; j < cardsInPlay.length; j++) {
+				if (images[i].getAttribute('data-id') === cardsInPlay[j].cardId) {
+					images[i].setAttribute('src','images/back.png');
+				}
+			}
+		}
 	}
 }
 
