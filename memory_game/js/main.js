@@ -29,7 +29,7 @@ var randomizeCards = function(array) {
 		array[j] = temp;
 		return array;
 	}
-}
+};
 
 var randomCards = randomizeCards(cards);
 
@@ -50,7 +50,7 @@ var createBoard = function() {
 		cardElement.addEventListener('click', flipCard);
 		document.getElementById('game-board').appendChild(cardElement);
 	}
-}
+};
 
 var flipCard = function() {
 	var currentCard = {};
@@ -69,7 +69,7 @@ var flipCard = function() {
 	} else {
 		return;
 	}
-}
+};
 
 var checkForMatch = function() {
 	var images = document.querySelectorAll('img');
@@ -79,11 +79,15 @@ var checkForMatch = function() {
 		matchMessage.textContent = 'You found a match!';
 	} else {
 		matchMessage.textContent = 'Sorry, try again.';
-		for (var i = 0; i < images.length; i++) {
-			for (var j = 0; j < cardsInPlay.length; j++) {
-				if (images[i].getAttribute('data-id') === cardsInPlay[j].cardId) {
-					images[i].setAttribute('src','images/back.png');
-				}
+		flipCardNoMatch(images);
+	}
+};
+
+var flipCardNoMatch = function(array) {
+	for (var i = 0; i < array.length; i++) {
+		for (var j = 0; j < cardsInPlay.length; j++) {
+			if (array[i].getAttribute('data-id') === cardsInPlay[j].cardId) {
+				array[i].setAttribute('src','images/back.png');
 			}
 		}
 	}
@@ -93,11 +97,11 @@ var button = document.querySelector('button');
 
 var buttonMouseOver = function() {
     button.style.backgroundColor = '#00A6B3';
-}
+};
 
 var buttonMouseOut = function() {
 	button.style.backgroundColor = '#F15B31';
-}
+};
 
 var resetBoard = function() {
 	randomCards = randomizeCards(cards);
@@ -109,7 +113,7 @@ var resetBoard = function() {
 	for (var i = 0; i < currentCards.length; i++) {
 		currentCards[i].setAttribute('src', 'images/back.png');
 	}
-}
+};
 
 button.addEventListener('mouseover', buttonMouseOver);
 button.addEventListener('mouseout', buttonMouseOut);
