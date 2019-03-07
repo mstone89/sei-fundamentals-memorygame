@@ -40,6 +40,7 @@ p {
 	font-family: "Droid Serif", serif;
 	line-height: 26px;
 	font-size: 18px;
+	margin: 0 0 50px 0;
 }
 
 a {
@@ -93,6 +94,10 @@ footer p {
 	float: right;
 }
 
+.copyright, .message {
+	margin: 20px 0 20px 0;
+}
+
 .clearfix:after {
 	visibility: hidden;
 	display: block;
@@ -113,7 +118,6 @@ button {
 	letter-spacing: 1px;
 	font-size: 15px;
 	padding: 10px;
-	margin: 20px 0 0 0;
 	border: none;
 	background-color: #F15B31;
 	color: #FFFFFF;
